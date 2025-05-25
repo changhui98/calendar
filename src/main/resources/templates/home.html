@@ -10,23 +10,9 @@
     <link rel="stylesheet" th:href="@{/css/home.css}">
 </head>
 <body>
+<header th:replace="~{/include/header_nav_footer.html::header}"></header>
 
-    <header>
-        <div id="top">
-            <h3>MY CALENDAR</h3>
-        </div>
-        <div id="header_wrap">
-            <a th:href="@{/}">home</a> &nbsp;&nbsp;
-            <a th:href="@{/member/signup}">sign-up</a> &nbsp;&nbsp;
-            <a th:href="@{/member/signin}">sign-in</a> &nbsp;&nbsp;
-        </div>
-    </header>
-
-    <nav>
-        <div id="nav_wrap">
-            <a th:href="@{/planner}">planner</a>
-        </div>
-    </nav>
+<nav th:replace="~{/include/header_nav_footer.html::nav}"></nav>
 
     <section>
         <div id="section_wrap">
@@ -39,11 +25,7 @@
         </div>
     </section>
 
-    <footer>
-        <div id="footer_wrap">
-            Copyright OFFICE Corp. ALL Rights Reserved.
-        </div>
-    </footer>
+<footer th:replace="~{/include/header_nav_footer.html::footer}"></footer>
 
 </body>
 </html>
