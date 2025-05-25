@@ -8,6 +8,8 @@
   <link rel="stylesheet" th:href="@{/css/common.css}">
   <link rel="stylesheet" th:href="@{/css/header_nav_footer.css}">
   <link rel="stylesheet" th:href="@{/css/member.css}">
+
+  <script th:src="@{/js/member.js}"></script>
 </head>
 <body>
 <header th:replace="~{/include/header_nav_footer.html::header}"></header>
@@ -25,7 +27,7 @@
         <input type="password" name="pw" placeholder="INPUT NEW MEMBER PW"><br>
         <input type="email" name="mail" placeholder="INPUT NEW MEMBER EMAIL"><br>
         <input type="text" name="phone" placeholder="INPUT NEW MEMBER PHONE"><br>
-        <input type="button" value="sign-up">
+        <input type="button" value="sign-up" onclick="signupForm();">
         <input type="reset" value="reset">
       </form>
     </div>
