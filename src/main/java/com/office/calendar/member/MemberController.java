@@ -2,6 +2,7 @@ package com.office.calendar.member;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -26,12 +27,13 @@ public class MemberController {
     회원 가입 확인
      */
     @PostMapping("/member/signup_confirm")
-    public String signupConfirm(MemberDto memberDto) {
+    public String signupConfirm(MemberDto memberDto, Model model) {
         System.out.println("[MemberController] signupConfirm()");
 
         String nextPage = "member/signup_result";
 
         int result = memberService.signupConfirm(memberDto);
+        model.addAttribute("result", result);
 
         return nextPage;
     }
