@@ -1,6 +1,7 @@
 package com.office.calendar.member;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,12 +14,17 @@ public class MemberService {
     @Autowired
     MemberDao memberDao;
 
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
     public int signupConfirm(MemberDto memberDto) {
         System.out.println("[MemberService] signupConfirm()");
 
         boolean isMember = memberDao.isMember(memberDto.getId());
 
         if (!isMember) {
+            memberDto.setPw(passwordEncoder.encode(memberDto.getPw()));
+
             int result = memberDao.insertMember(memberDto);
             if (result > 0) {
                 return USER_SIGNUP_SUCCESS;
