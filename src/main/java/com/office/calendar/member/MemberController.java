@@ -1,5 +1,6 @@
 package com.office.calendar.member;
 
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -53,13 +54,18 @@ public class MemberController {
     로그인 확인
      */
     @PostMapping("/member/signin_confirm")
-    public String signInConfirm(MemberDto memberDto, Model model) {
+    public String signInConfirm(MemberDto memberDto, Model model, HttpSession session) {
         System.out.println("[MemberController] signInConfirm()");
 
         String nextPage = "member/signin_result";
 
-        String loginedID =  memberService.signInConfirm(memberDto);
+        String loginedID = memberService.signInConfirm(memberDto);
         model.addAttribute("loginedID", loginedID);
+
+        if (loginedID != null) {
+            session.setAttribute("loginedID", loginedID);
+            session.setMaxInactiveInterval(60 * 30);
+        }
 
         return nextPage;
     }
