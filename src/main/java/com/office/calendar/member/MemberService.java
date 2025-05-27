@@ -35,4 +35,18 @@ public class MemberService {
             return USER_ID_ALREADY_EXIST;
         }
     }
+
+    public String signInConfirm(MemberDto memberDto) {
+        System.out.println("[MemberService] signInConfirm()");
+
+        MemberDto dto = memberDao.selectMemberByID(memberDto.getId()); //MemberDto or null
+        if (dto != null && passwordEncoder.matches(memberDto.getPw(), dto.getPw())) {
+            System.out.println("[MemberService] MEMBER LOGIN SUCCESS!!");
+            return dto.getId();
+        } else {
+            System.out.println("[MemberService] MEMBER LOGIN FAIL!! ");
+            return null;
+        }
+
+    }
 }

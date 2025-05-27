@@ -37,4 +37,30 @@ public class MemberController {
 
         return nextPage;
     }
+
+    /*
+    로그인 양식
+     */
+    @GetMapping("/member/signin")
+    public String signIn() {
+        System.out.println("[MemberController] signIn()");
+
+        String nextPage = "member/signin_form";
+        return nextPage;
+    }
+
+    /*
+    로그인 확인
+     */
+    @PostMapping("/member/signin_confirm")
+    public String signInConfirm(MemberDto memberDto, Model model) {
+        System.out.println("[MemberController] signInConfirm()");
+
+        String nextPage = "member/signin_result";
+
+        String loginedID =  memberService.signInConfirm(memberDto);
+        model.addAttribute("loginedID", loginedID);
+
+        return nextPage;
+    }
 }

@@ -19,15 +19,15 @@
 <section>
   <div id="section_wrap">
     <div class="word">
-      SIGN-UP RESULT
+      SIGN-IN RESULT
     </div>
     <div class="content">
-      <th:block th:if="${result > 0}">
-        SIGN-UP SUCCESS
+      <th:block th:if="${loginedID != null}">
+        SIGN-IN SUCCESS
       </th:block>
 
-      <th:block th:if="${result <= 0}">
-        SIGN-UP FAIL
+      <th:block th:if="${loginedID == null}">
+        SIGN-IN FAIL
       </th:block>
 
     </div>
