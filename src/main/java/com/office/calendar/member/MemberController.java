@@ -69,4 +69,16 @@ public class MemberController {
 
         return nextPage;
     }
+
+    /*
+    로그아웃 확인
+     */
+    @GetMapping("/member/signout_confirm")
+    public String signOutConfirm(HttpSession session) {
+        System.out.println("[MemberController] signOutConfirm()");
+
+        String nextPage = "redirect:/";
+        session.invalidate();
+        return nextPage;
+    }
 }
