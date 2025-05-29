@@ -81,4 +81,36 @@ public class MemberController {
         session.invalidate();
         return nextPage;
     }
+
+    /*
+    계정 정보 수정 양식
+     */
+    @GetMapping("/member/modify")
+    public String modify(HttpSession session, Model model) {
+        System.out.println("[MemberController] modify()");
+
+        String loginedID = (String.valueOf(session.getAttribute("loginedID")));
+        String nextPage = "member/modify_form";
+
+        MemberDto loginedMemberDTO = memberService.modify(loginedID);
+        model.addAttribute("loginedMemberDto", loginedMemberDTO);
+
+        return nextPage;
+    }
+
+    /*
+    계정 정보 수정 확인
+     */
+    @PostMapping("/member/modify_confirm")
+    public String modifyConfirm(MemberDto memberDto, Model model) {
+        System.out.println("[MemberController] modifyConfirm()");
+
+        String nextPage = "member/modify_result";
+        int result = memberService.modifyConfirm(memberDto);
+        model.addAttribute("result", result);
+
+        return nextPage;
+    }
+
+
 }
