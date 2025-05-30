@@ -88,7 +88,7 @@ public class MemberDao {
 
         try {
 
-            result = jdbcTemplate.update(sql, memberDto.getPw(), memberDto.getMail(), memberDto.getPhone());
+            result = jdbcTemplate.update(sql, memberDto.getPw(), memberDto.getMail(), memberDto.getPhone(), memberDto.getNo());
 
         } catch (Exception e) {
             e.printStackTrace();

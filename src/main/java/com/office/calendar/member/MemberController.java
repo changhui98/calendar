@@ -89,11 +89,11 @@ public class MemberController {
     public String modify(HttpSession session, Model model) {
         System.out.println("[MemberController] modify()");
 
-        String loginedID = (String.valueOf(session.getAttribute("loginedID")));
+        String loginedID = String.valueOf(session.getAttribute("loginedID"));
         String nextPage = "member/modify_form";
 
-        MemberDto loginedMemberDTO = memberService.modify(loginedID);
-        model.addAttribute("loginedMemberDto", loginedMemberDTO);
+        MemberDto loginedMemberDto = memberService.modify(loginedID);
+        model.addAttribute("loginedMemberDto", loginedMemberDto);
 
         return nextPage;
     }

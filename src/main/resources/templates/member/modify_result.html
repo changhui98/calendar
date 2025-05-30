@@ -19,18 +19,17 @@
 <section>
   <div id="section_wrap">
     <div class="word">
-      MODIFY FORM
+      MODIFY RESULT
     </div>
     <div class="content">
-      <form th:action="@{/member/modify_confirm}" name="modify_form" method="POST">
-        <input type="hidden" name="no" th:value="${loginedMemberDto.no}">
-        <input type="text" name="id" th:value="${loginedMemberDto.id}" readonly disabled><br>
-        <input type="password" name="pw" placeholder="INPUT MEMBER PW"><br>
-        <input type="email" name="mail" th:value="${loginedMemberDto.mail}" placeholder="INPUT MEMBER EMAIL"><br>
-        <input type="text" name="phone" th:value="${loginedMemberDto.phone}" placeholder="INPUT MEMBER PHONE"><br>
-        <input type="button" value="modify" onclick="modifyForm();">
-        <input type="reset" value="reset">
-      </form>
+      <th:block th:if="${result > 0}">
+        MODIFY SUCCESS
+      </th:block>
+
+      <th:block th:if="${result <= 0}">
+        MODIFY FAIL
+      </th:block>
+
     </div>
   </div>
 </section>
