@@ -112,5 +112,32 @@ public class MemberController {
         return nextPage;
     }
 
+    /*
+    비밀번호 찾기 양식
+     */
+    @GetMapping("/member/findpassword")
+    public String findPassword() {
+        System.out.println("[MemberController] findPassword");
+
+        String nextPage = "member/findpassword_form";
+
+        return nextPage;
+    }
+
+    /*
+    비밀번호 찾기 확인
+     */
+    @PostMapping("/member/findpassword_confirm")
+    public String findPasswordConfirm(MemberDto memberDto, Model model) {
+        System.out.println("[MemberController] findpasswordConfirm()");
+
+        String nextPage = "member/findpassword_result";
+
+        int result = memberService.findpasswordConfirm(memberDto);
+        model.addAttribute("result", result);
+
+        return nextPage;
+    }
+
 
 }
