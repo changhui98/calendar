@@ -1,6 +1,8 @@
 package com.office.calendar.member;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 public class MemberDto {
