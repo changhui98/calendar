@@ -12,18 +12,24 @@ import java.util.Date;
 @Service
 public class MemberService {
 
+    @Autowired
+    private final MemberDao memberDao;
+
+    @Autowired
+    private final PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private final JavaMailSender javaMailSender;
+
     public final static int USER_ID_ALREADY_EXIST   = 0;
     public final static int USER_SIGNUP_SUCCESS     = 1;
     public final static int USER_SIGNUP_FAIL        = -1;
 
-    @Autowired
-    MemberDao memberDao;
-
-    @Autowired
-    PasswordEncoder passwordEncoder;
-
-    @Autowired
-    JavaMailSender javaMailSender;
+    public MemberService(MemberDao memberDao, PasswordEncoder passwordEncoder, JavaMailSender javaMailSender) {
+        this.memberDao = memberDao;
+        this.passwordEncoder = passwordEncoder;
+        this.javaMailSender = javaMailSender;
+    }
 
     public int signupConfirm(MemberDto memberDto) {
         System.out.println("[MemberService] signupConfirm()");

@@ -9,8 +9,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
+
     @Autowired
-    MemberSigninInterceptor memberSigninInterceptor;
+    private final MemberSigninInterceptor memberSigninInterceptor;
+
+    public WebConfig(MemberSigninInterceptor memberSigninInterceptor) {
+        this.memberSigninInterceptor = memberSigninInterceptor;
+    }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {

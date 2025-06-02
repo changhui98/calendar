@@ -6,17 +6,24 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/member")
 public class MemberController {
 
+    private final MemberService memberService;
+
+
     @Autowired
-    MemberService memberService;
+    public MemberController(MemberService memberService) {
+        this.memberService = memberService;
+    }
 
     /*
-    회원 가입 양식
-     */
-    @GetMapping("/member/signup")
+        회원 가입 양식
+         */
+    @GetMapping("/signup")
     public String signUp() {
         System.out.println("[MemberController] signUp()");
 
@@ -27,7 +34,7 @@ public class MemberController {
     /*
     회원 가입 확인
      */
-    @PostMapping("/member/signup_confirm")
+    @PostMapping("/signup_confirm")
     public String signupConfirm(MemberDto memberDto, Model model) {
         System.out.println("[MemberController] signupConfirm()");
 
@@ -42,7 +49,7 @@ public class MemberController {
     /*
     로그인 양식
      */
-    @GetMapping("/member/signin")
+    @GetMapping("/signin")
     public String signIn() {
         System.out.println("[MemberController] signIn()");
 
@@ -53,7 +60,7 @@ public class MemberController {
     /*
     로그인 확인
      */
-    @PostMapping("/member/signin_confirm")
+    @PostMapping("/signin_confirm")
     public String signInConfirm(MemberDto memberDto, Model model, HttpSession session) {
         System.out.println("[MemberController] signInConfirm()");
 
@@ -73,7 +80,7 @@ public class MemberController {
     /*
     로그아웃 확인
      */
-    @GetMapping("/member/signout_confirm")
+    @GetMapping("/signout_confirm")
     public String signOutConfirm(HttpSession session) {
         System.out.println("[MemberController] signOutConfirm()");
 
@@ -85,7 +92,7 @@ public class MemberController {
     /*
     계정 정보 수정 양식
      */
-    @GetMapping("/member/modify")
+    @GetMapping("/modify")
     public String modify(HttpSession session, Model model) {
         System.out.println("[MemberController] modify()");
 
@@ -102,7 +109,7 @@ public class MemberController {
     /*
     계정 정보 수정 확인
      */
-    @PostMapping("/member/modify_confirm")
+    @PostMapping("/modify_confirm")
     public String modifyConfirm(MemberDto memberDto, Model model) {
         System.out.println("[MemberController] modifyConfirm()");
 
@@ -116,7 +123,7 @@ public class MemberController {
     /*
     비밀번호 찾기 양식
      */
-    @GetMapping("/member/findpassword")
+    @GetMapping("/findpassword")
     public String findPassword() {
         System.out.println("[MemberController] findPassword");
 
@@ -128,7 +135,7 @@ public class MemberController {
     /*
     비밀번호 찾기 확인
      */
-    @PostMapping("/member/findpassword_confirm")
+    @PostMapping("/findpassword_confirm")
     public String findPasswordConfirm(MemberDto memberDto, Model model) {
         System.out.println("[MemberController] findpasswordConfirm()");
 

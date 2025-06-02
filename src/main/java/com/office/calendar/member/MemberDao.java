@@ -14,7 +14,11 @@ import java.util.List;
 public class MemberDao {
 
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
+
+    public MemberDao(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     public boolean isMember(String id) {
         System.out.println("[MemberDao] isMember()");
