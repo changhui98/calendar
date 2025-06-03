@@ -1,6 +1,7 @@
 package com.office.calendar.member;
 
 import jakarta.servlet.http.HttpSession;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
+@Slf4j
 @Controller
 @RequestMapping("/member")
 public class MemberController {
@@ -25,7 +28,7 @@ public class MemberController {
          */
     @GetMapping("/signup")
     public String signUp() {
-        System.out.println("[MemberController] signUp()");
+        log.info("signup()");
 
         String nextPage = "member/signup_form";
         return nextPage;
@@ -36,7 +39,7 @@ public class MemberController {
      */
     @PostMapping("/signup_confirm")
     public String signupConfirm(MemberDto memberDto, Model model) {
-        System.out.println("[MemberController] signupConfirm()");
+        log.info("signup_confirm()");
 
         String nextPage = "member/signup_result";
 
@@ -51,7 +54,7 @@ public class MemberController {
      */
     @GetMapping("/signin")
     public String signIn() {
-        System.out.println("[MemberController] signIn()");
+        log.info("signin()");
 
         String nextPage = "member/signin_form";
         return nextPage;
@@ -62,7 +65,7 @@ public class MemberController {
      */
     @PostMapping("/signin_confirm")
     public String signInConfirm(MemberDto memberDto, Model model, HttpSession session) {
-        System.out.println("[MemberController] signInConfirm()");
+        log.info("signin_confirm()");
 
         String nextPage = "member/signin_result";
 
@@ -82,7 +85,7 @@ public class MemberController {
      */
     @GetMapping("/signout_confirm")
     public String signOutConfirm(HttpSession session) {
-        System.out.println("[MemberController] signOutConfirm()");
+        log.info("signout_confirm()");
 
         String nextPage = "redirect:/";
         session.invalidate();
@@ -94,7 +97,7 @@ public class MemberController {
      */
     @GetMapping("/modify")
     public String modify(HttpSession session, Model model) {
-        System.out.println("[MemberController] modify()");
+        log.info("modify()");
 
         String nextPage = "member/modify_form";
 
@@ -111,7 +114,7 @@ public class MemberController {
      */
     @PostMapping("/modify_confirm")
     public String modifyConfirm(MemberDto memberDto, Model model) {
-        System.out.println("[MemberController] modifyConfirm()");
+        log.info("modify_confirm()");
 
         String nextPage = "member/modify_result";
         int result = memberService.modifyConfirm(memberDto);
@@ -125,7 +128,7 @@ public class MemberController {
      */
     @GetMapping("/findpassword")
     public String findPassword() {
-        System.out.println("[MemberController] findPassword");
+        log.info("findpassword");
 
         String nextPage = "member/findpassword_form";
 
@@ -137,7 +140,7 @@ public class MemberController {
      */
     @PostMapping("/findpassword_confirm")
     public String findPasswordConfirm(MemberDto memberDto, Model model) {
-        System.out.println("[MemberController] findpasswordConfirm()");
+        log.info("findpassword_confirm()");
 
         String nextPage = "member/findpassword_result";
 

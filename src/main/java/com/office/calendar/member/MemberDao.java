@@ -1,5 +1,6 @@
 package com.office.calendar.member;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -10,6 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @Repository
 public class MemberDao {
 
@@ -21,7 +23,7 @@ public class MemberDao {
     }
 
     public boolean isMember(String id) {
-        System.out.println("[MemberDao] isMember()");
+        log.info("isMember()");
 
         String sql = "SELECT COUNT(*) FROM USER_MEMBER WHERE ID = ?";
 
@@ -35,7 +37,7 @@ public class MemberDao {
 
 
     public int insertMember(MemberDto memberDto) {
-        System.out.println("[MemberDao] insertMember()");
+        log.info("insertMember()");
 
         String sql = "INSERT INTO USER_MEMBER(ID, PW, MAIL, PHONE) VALUES(?, ?, ?, ?)";
 
@@ -51,7 +53,7 @@ public class MemberDao {
     }
 
     public MemberDto selectMemberByID(String id) {
-        System.out.println("[MemberDao] selectMemberByID()");
+        log.info("selectMemberByID()");
 
         String sql = "SELECT * FROM USER_MEMBER WHERE ID = ?";
 
@@ -84,7 +86,7 @@ public class MemberDao {
     }
 
     public int updateMember(MemberDto memberDto) {
-        System.out.println("[MemberDao] updateMember()");
+        log.info("updateMember()");
 
         String sql = "UPDATE USER_MEMBER SET PW = ?, MAIL = ?, PHONE = ?, MOD_DATE = NOW() WHERE NO = ?";
 
@@ -102,7 +104,7 @@ public class MemberDao {
     }
 
     public MemberDto selectMemberByIDAndMail(MemberDto memberDto) {
-        System.out.println("[MemberDao] selectMemberByIDAndMail");
+        log.info("selectMemberByIDAndMail()");
 
         String sql = "SELECT * FROM USER_MEMBER WHERE ID =? AND MAIL = ?";
 
@@ -133,7 +135,7 @@ public class MemberDao {
     }
 
     public int updatePassword(String id, String encodeNewPw) {
-        System.out.println("[MemberDao] updatePassword()");
+        log.info("updatePassword()");
 
         String sql = "UPDATE USER_MEMBER SET PW = ?, MOD_DATE = NOW() WHERE ID = ?";
 

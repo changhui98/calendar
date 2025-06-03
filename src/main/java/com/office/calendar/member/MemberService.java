@@ -1,5 +1,6 @@
 package com.office.calendar.member;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.security.SecureRandom;
 import java.util.Date;
 
+@Slf4j
 @Service
 public class MemberService {
 
@@ -32,7 +34,7 @@ public class MemberService {
     }
 
     public int signupConfirm(MemberDto memberDto) {
-        System.out.println("[MemberService] signupConfirm()");
+        log.info("signupConfirm()");
 
         boolean isMember = memberDao.isMember(memberDto.getId());
 
@@ -51,27 +53,27 @@ public class MemberService {
     }
 
     public String signInConfirm(MemberDto memberDto) {
-        System.out.println("[MemberService] signInConfirm()");
+        log.info("signInConfirm()");
 
         MemberDto dto = memberDao.selectMemberByID(memberDto.getId()); //MemberDto or null
         if (dto != null && passwordEncoder.matches(memberDto.getPw(), dto.getPw())) {
-            System.out.println("[MemberService] MEMBER LOGIN SUCCESS!!");
+            log.info("MEMBER LOGIN SUCCESS!!");
             return dto.getId();
         } else {
-            System.out.println("[MemberService] MEMBER LOGIN FAIL!! ");
+            log.info("MEMBER LOGIN FAIL!!");
             return null;
         }
 
     }
 
     public MemberDto modify(String loginedID) {
-        System.out.println("[MemberService] modify()");
+        log.info("modify()");
 
         return memberDao.selectMemberByID(loginedID);
     }
 
     public int modifyConfirm(MemberDto memberDto) {
-        System.out.println("[MemberService] modifyConfirm()");
+        log.info("modifyConfirm()");
 
         memberDto.setPw(passwordEncoder.encode(memberDto.getPw()));
 
@@ -79,7 +81,7 @@ public class MemberService {
     }
 
     public int findpasswordConfirm(MemberDto memberDto) {
-        System.out.println("[MemberService] findpasswordConfirm()");
+        log.info("findpasswordConfirm()");
 
         //1. 인증 by ID, MAIL
         MemberDto selectedMemberDto = memberDao.selectMemberByIDAndMail(memberDto);
@@ -103,7 +105,7 @@ public class MemberService {
     }
 
     private void sendNewPasswordByMail(String toMailAddr, String newPassword) {
-        System.out.println("[MemberService] sendNewPasswordByMail");
+        log.info("sendNewPasswordByMail()");
 
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
         simpleMailMessage.setTo(toMailAddr);
@@ -118,7 +120,7 @@ public class MemberService {
     }
 
     private String createNewPassword() {
-        System.out.println("[MemberService] createNewPassword()");
+        log.info("createNewPassword()");
 
         char[] chars = new char[]{
 
@@ -144,7 +146,7 @@ public class MemberService {
             }
 
         }
-        System.out.println("[MemberService] NEW PASSWORD : " +stringBuffer.toString());
+        log.info("NEW PASSWORD: {}", stringBuffer.toString());
 
         return stringBuffer.toString();
     }
