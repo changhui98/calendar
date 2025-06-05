@@ -8,8 +8,9 @@
             %d{yyyy-MM-dd HH:mm:ss} %-5p [%c{1}] - %m%n
         </Property>
 
-        <Property name="LOG_PATH">logs</Property>
-
+        <Property name="LOG_PATH">
+            logs
+        </Property>
     </Properties>
 
     <!-- 로그를 출력할 대상 설정 -->
@@ -18,7 +19,14 @@
             <PatternLayout pattern="${LOG_PATTERN}" />
         </Console>
 
-        <File name="FileByInfo" fileName="${LOG_PATH}/spring-info.log">
+        <File name="FileForRootByInfo" fileName="${LOG_PATH}/spring-root-info.log">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Filters>
+                <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+        </File>
+
+        <File name="FileForAppByInfo" fileName="${LOG_PATH}/spring-app-info.log">
             <PatternLayout pattern="${LOG_PATTERN}"/>
             <Filters>
                 <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
@@ -30,8 +38,13 @@
     <Loggers>
         <Root level="info">
             <AppenderRef ref="Console"/>
-            <AppenderRef ref="FileByInfo"/>
+            <AppenderRef ref="FileForRootByInfo"/>
         </Root>
+
+        <Logger name="com.office" level="debug" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="FileForAppByInfo" />
+        </Logger>
     </Loggers>
 
 </Configuration>

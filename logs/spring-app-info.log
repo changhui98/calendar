@@ -1,0 +1,27 @@
+2025-06-05 16:12:06 INFO  [CalendarApplication] - Starting CalendarApplication using Java 17.0.0.1 with PID 7776 (C:\app\spring_boot\pjt_intellij\calendar\build\classes\java\main started by yuch0 in C:\app\spring_boot\pjt_intellij\calendar)
+2025-06-05 16:12:06 INFO  [CalendarApplication] - No active profile set, falling back to 1 default profile: "default"
+2025-06-05 16:12:07 INFO  [WebConfig] - addInterceptors
+2025-06-05 16:12:08 INFO  [CalendarApplication] - Started CalendarApplication in 2.266 seconds (process running for 2.844)
+2025-06-05 16:12:48 INFO  [MemberController] - signup()
+2025-06-05 16:12:48 INFO  [HomeController] - home()
+2025-06-05 16:12:50 INFO  [MemberController] - signin()
+2025-06-05 16:12:54 INFO  [MemberController] - signin_confirm()
+2025-06-05 16:12:54 INFO  [MemberService] - signInConfirm()
+2025-06-05 16:12:54 INFO  [MemberDao] - selectMemberByID()
+2025-06-05 16:12:55 INFO  [MemberService] - MEMBER LOGIN FAIL!!
+2025-06-05 16:13:31 INFO  [MemberController] - signin()
+2025-06-05 16:13:34 INFO  [MemberController] - signin_confirm()
+2025-06-05 16:13:34 INFO  [MemberService] - signInConfirm()
+2025-06-05 16:13:34 INFO  [MemberDao] - selectMemberByID()
+2025-06-05 16:13:35 INFO  [MemberService] - MEMBER LOGIN FAIL!!
+2025-06-05 16:13:37 INFO  [MemberController] - signin()
+2025-06-05 16:13:38 INFO  [MemberController] - findpassword
+2025-06-05 16:13:44 INFO  [MemberController] - findpassword_confirm()
+2025-06-05 16:13:44 INFO  [MemberService] - findpasswordConfirm()
+2025-06-05 16:13:44 INFO  [MemberDao] - selectMemberByIDAndMail()
+2025-06-05 16:37:05 INFO  [MemberController] - signin()
+2025-06-05 16:37:09 INFO  [MemberController] - signin_confirm()
+2025-06-05 16:37:09 INFO  [MemberService] - signInConfirm()
+2025-06-05 16:37:09 INFO  [MemberDao] - selectMemberByID()
+2025-06-05 16:37:09 INFO  [MemberService] - MEMBER LOGIN SUCCESS!!
+2025-06-05 16:37:38 INFO  [HomeController] - home()
