@@ -25,3 +25,34 @@ This generated password is for development use only. Your security configuration
 2025-06-05 16:37:09 INFO  [HikariDataSource] - HikariPool-1 - Starting...
 2025-06-05 16:37:09 INFO  [HikariPool] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3a66cd4
 2025-06-05 16:37:09 INFO  [HikariDataSource] - HikariPool-1 - Start completed.
+2025-06-05 19:22:12 INFO  [Http11Processor] - Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name [0x120x010x00^0x000x000x010x000x000x00$0x000x060x010x00*0x000x010x020x00+0x000x010x030x00,0x000x040x040x0000x000x010x050x0010x00$0x060x00U0x000x010xff0x040x070x0c0xbc0x000x000x000x000x000x000x150xd00x000xaf/0x160x830xf60x7f0x000x000xc00xf60x7f0x7f0x8c0x000x000x000xe00x81;0x830xf60x7f0x000x000x000x000x000x000x000x000x000x000x000x0090x0b0x01...]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:403) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271) [tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) [tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740) [tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) [tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) [tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-embed-core-10.1.41.jar:10.1.41]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-06-09 13:59:42 INFO  [DevToolsPropertyDefaultsPostProcessor] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-09 13:59:42 INFO  [DevToolsPropertyDefaultsPostProcessor] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-09 13:59:43 INFO  [TomcatWebServer] - Tomcat initialized with port 8090 (http)
+2025-06-09 13:59:43 INFO  [Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-8090"]
+2025-06-09 13:59:43 INFO  [StandardService] - Starting service [Tomcat]
+2025-06-09 13:59:43 INFO  [StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-09 13:59:43 INFO  [[/]] - Initializing Spring embedded WebApplicationContext
+2025-06-09 13:59:43 INFO  [ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 1276 ms
+2025-06-09 13:59:44 WARN  [UserDetailsServiceAutoConfiguration] - 
+
+Using generated security password: 7ee9489f-873a-4782-81e8-27ef2cd4455a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-06-09 13:59:44 INFO  [InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer] - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-06-09 13:59:44 INFO  [OptionalLiveReloadServer] - LiveReload server is running on port 35729
+2025-06-09 13:59:44 INFO  [Http11NioProtocol] - Starting ProtocolHandler ["http-nio-8090"]
+2025-06-09 13:59:44 INFO  [TomcatWebServer] - Tomcat started on port 8090 (http) with context path '/'

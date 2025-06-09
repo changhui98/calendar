@@ -26,10 +26,35 @@
             </Filters>
         </File>
 
-        <File name="FileForAppByInfo" fileName="${LOG_PATH}/spring-app-info.log">
-            <PatternLayout pattern="${LOG_PATTERN}"/>
+        <!-- DEBUG -->
+        <File name="FileForAppByDebug" fileName="${LOG_PATH}/spring-app-debug.log">
+            <PatternLayout pattern="${LOG_PATTERN}" />
             <Filters>
-                <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+                <LevelRangeFilter minLevel="DEBUG" maxLevel="DEBUG" onMatch="ACCEPT" onMismatch="DENY" />
+            </Filters>
+        </File>
+
+        <!-- INFO -->
+        <File name="FileForAppByInfo" fileName="${LOG_PATH}/spring-app-info.log">
+            <PatternLayout pattern="${LOG_PATTERN}" />
+            <Filters>
+                <LevelRangeFilter minLevel="INFO" maxLevel="INFO" onMatch="ACCEPT" onMismatch="DENY" />
+            </Filters>
+        </File>
+
+        <!-- WARN -->
+        <File name="FileForAppByWarn" fileName="${LOG_PATH}/spring-app-warn.log">
+            <PatternLayout pattern="${LOG_PATTERN}" />
+            <Filters>
+                <LevelRangeFilter minLevel="WARN" maxLevel="WARN" onMatch="ACCEPT" onMismatch="DENY" />
+            </Filters>
+        </File>
+
+        <!-- ERROR -->
+        <File name="FileForAppByError" fileName="${LOG_PATH}/spring-app-error.log">
+            <PatternLayout pattern="${LOG_PATTERN}" />
+            <Filters>
+                <LevelRangeFilter minLevel="ERROR" maxLevel="ERROR" onMatch="ACCEPT" onMismatch="DENY" />
             </Filters>
         </File>
     </Appenders>
@@ -43,7 +68,10 @@
 
         <Logger name="com.office" level="debug" additivity="false">
             <AppenderRef ref="Console"/>
+            <AppenderRef ref="FileForAppByDebug" />
             <AppenderRef ref="FileForAppByInfo" />
+            <AppenderRef ref="FileForAppByWarn" />
+            <AppenderRef ref="FileForAppByError" />
         </Logger>
     </Loggers>
 
