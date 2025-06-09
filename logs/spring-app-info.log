@@ -29,3 +29,9 @@
 2025-06-09 13:59:42 INFO  [CalendarApplication] - No active profile set, falling back to 1 default profile: "default"
 2025-06-09 13:59:44 INFO  [WebConfig] - addInterceptors
 2025-06-09 13:59:44 INFO  [CalendarApplication] - Started CalendarApplication in 2.433 seconds (process running for 2.959)
+2025-06-09 14:03:25 INFO  [HomeController] - home()
+2025-06-09 14:03:47 INFO  [CalendarApplication] - Starting CalendarApplication using Java 17.0.0.1 with PID 21028 (C:\app\spring_boot\pjt_intellij\calendar\build\classes\java\main started by yuch0 in C:\app\spring_boot\pjt_intellij\calendar)
+2025-06-09 14:03:47 INFO  [CalendarApplication] - No active profile set, falling back to 1 default profile: "default"
+2025-06-09 14:03:49 INFO  [WebConfig] - addInterceptors
+2025-06-09 14:03:49 INFO  [CalendarApplication] - Started CalendarApplication in 2.139 seconds (process running for 2.658)
+2025-06-09 14:03:52 INFO  [HomeController] - test - info - home()
