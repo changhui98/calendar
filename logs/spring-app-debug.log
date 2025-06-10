@@ -1,3 +1,17 @@
 2025-06-09 13:59:42 DEBUG [CalendarApplication] - Running with Spring Boot v3.5.0, Spring v6.2.7
 2025-06-09 14:03:47 DEBUG [CalendarApplication] - Running with Spring Boot v3.5.0, Spring v6.2.7
 2025-06-09 14:03:52 DEBUG [HomeController] - test - debug - home()
+2025-06-09 18:51:57 DEBUG [CalendarApplication] - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-09 18:52:03 DEBUG [HomeController] - test - debug - home()
+2025-06-09 18:53:06 DEBUG [HomeController] - test - debug - home()
+2025-06-09 21:07:44 DEBUG [HomeController] - test - debug - home()
+2025-06-09 21:08:21 DEBUG [HomeController] - test - debug - home()
+2025-06-10 16:16:02 DEBUG [CalendarApplication] - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-10 16:18:24 DEBUG [CalendarApplication] - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-10 16:20:02 DEBUG [CalendarApplication] - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-10 16:20:10 DEBUG [selectMemberByID] - ==>  Preparing: SELECT * FROM USER_MEMBER WHERE ID = ?
+2025-06-10 16:20:10 DEBUG [selectMemberByID] - ==> Parameters: admin(String)
+2025-06-10 16:20:10 DEBUG [selectMemberByID] - <==      Total: 1
+2025-06-10 16:20:19 DEBUG [selectMemberByID] - ==>  Preparing: SELECT * FROM USER_MEMBER WHERE ID = ?
+2025-06-10 16:20:19 DEBUG [selectMemberByID] - ==> Parameters: admin(String)
+2025-06-10 16:20:19 DEBUG [selectMemberByID] - <==      Total: 1

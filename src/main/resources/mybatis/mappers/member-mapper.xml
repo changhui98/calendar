@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.office.calendar.member.mapper.MemberMapper">
+
+    <select id="isMember"
+            resultType="Boolean"
+            parameterType="String">
+        SELECT
+            COUNT(*)
+        FROM
+            USER_MEMBER
+        WHERE
+            ID = #{id}
+    </select>
+
+    <insert id="insertMember"
+            parameterType="com.office.calendar.member.MemberDto">
+        INSERT INTO
+            USER_MEMBER(ID, PW, MAIL, PHONE)
+        VALUES
+            (#{id}, #{pw}, #{mail}, #{phone})
+    </insert>
+
+    <select id="selectMemberByID"
+            resultType="com.office.calendar.member.MemberDto"
+            parameterType="String">
+        SELECT
+            *
+        FROM
+            USER_MEMBER
+        WHERE
+            ID = #{id}
+    </select>
+
+    <update id="updateMember"
+            parameterType="com.office.calendar.member.MemberDto">
+        UPDATE
+            USER_MEMBER
+        SET
+            PW = #{pw}, MAIL = #{mail}, PHONE = #{phone}, MOD_DATE = NOW()
+        WHERE
+            NO = #{no}
+    </update>
+
+    <select id="selectMemberByIDAndMail"
+            resultType="com.office.calendar.member.MemberDto"
+            parameterType="com.office.calendar.member.MemberDto">
+        SELECT
+            *
+        FROM
+            USER_MEMBER
+        WHERE
+            ID = #{id} AND MAIL = #{mail}
+    </select>
+
+    <update id="updatePassword"
+            parameterType="String">
+        UPDATE
+            USER_MEMBER
+        SET
+            PW = #{memPw}, MOD_DATE = NOW()
+        WHERE
+            ID = #{memId}
+    </update>
+
+</mapper>

@@ -35,3 +35,52 @@
 2025-06-09 14:03:49 INFO  [WebConfig] - addInterceptors
 2025-06-09 14:03:49 INFO  [CalendarApplication] - Started CalendarApplication in 2.139 seconds (process running for 2.658)
 2025-06-09 14:03:52 INFO  [HomeController] - test - info - home()
+2025-06-09 18:51:57 INFO  [CalendarApplication] - Starting CalendarApplication using Java 17.0.0.1 with PID 29128 (C:\app\spring_boot\pjt_intellij\calendar\build\classes\java\main started by yuch0 in C:\app\spring_boot\pjt_intellij\calendar)
+2025-06-09 18:51:57 INFO  [CalendarApplication] - No active profile set, falling back to 1 default profile: "default"
+2025-06-09 18:51:59 INFO  [WebConfig] - addInterceptors
+2025-06-09 18:51:59 INFO  [CalendarApplication] - Started CalendarApplication in 2.534 seconds (process running for 3.103)
+2025-06-09 18:52:03 INFO  [HomeController] - test - info - home()
+2025-06-09 18:52:04 INFO  [MemberController] - signin()
+2025-06-09 18:52:08 INFO  [MemberController] - signin_confirm()
+2025-06-09 18:52:08 INFO  [MemberService] - signInConfirm()
+2025-06-09 18:52:08 INFO  [MemberDao] - selectMemberByID()
+2025-06-09 18:52:09 INFO  [MemberService] - MEMBER LOGIN FAIL!!
+2025-06-09 18:53:00 INFO  [MemberController] - signin()
+2025-06-09 18:53:03 INFO  [MemberController] - signin_confirm()
+2025-06-09 18:53:03 INFO  [MemberService] - signInConfirm()
+2025-06-09 18:53:03 INFO  [MemberDao] - selectMemberByID()
+2025-06-09 18:53:03 INFO  [MemberService] - MEMBER LOGIN SUCCESS!!
+2025-06-09 18:53:06 INFO  [HomeController] - test - info - home()
+2025-06-09 21:07:44 INFO  [HomeController] - test - info - home()
+2025-06-09 21:08:21 INFO  [HomeController] - test - info - home()
+2025-06-10 16:16:02 INFO  [CalendarApplication] - Starting CalendarApplication using Java 17.0.0.1 with PID 17004 (C:\app\spring_boot\pjt_intellij\calendar\build\classes\java\main started by yuch0 in C:\app\spring_boot\pjt_intellij\calendar)
+2025-06-10 16:16:02 INFO  [CalendarApplication] - No active profile set, falling back to 1 default profile: "default"
+2025-06-10 16:16:04 INFO  [WebConfig] - addInterceptors
+2025-06-10 16:16:04 INFO  [CalendarApplication] - Started CalendarApplication in 2.547 seconds (process running for 3.15)
+2025-06-10 16:16:14 INFO  [HomeController] - test - info - home()
+2025-06-10 16:16:30 INFO  [MemberController] - signin()
+2025-06-10 16:16:36 INFO  [MemberController] - signin_confirm()
+2025-06-10 16:16:36 INFO  [MemberService] - signInConfirm()
+2025-06-10 16:18:24 INFO  [CalendarApplication] - Starting CalendarApplication using Java 17.0.0.1 with PID 19952 (C:\app\spring_boot\pjt_intellij\calendar\build\classes\java\main started by yuch0 in C:\app\spring_boot\pjt_intellij\calendar)
+2025-06-10 16:18:24 INFO  [CalendarApplication] - No active profile set, falling back to 1 default profile: "default"
+2025-06-10 16:18:26 INFO  [WebConfig] - addInterceptors
+2025-06-10 16:18:26 INFO  [CalendarApplication] - Started CalendarApplication in 2.477 seconds (process running for 3.071)
+2025-06-10 16:18:36 INFO  [MemberController] - signin()
+2025-06-10 16:18:39 INFO  [MemberController] - signin_confirm()
+2025-06-10 16:18:39 INFO  [MemberService] - signInConfirm()
+2025-06-10 16:18:45 INFO  [MemberController] - signin()
+2025-06-10 16:18:46 INFO  [HomeController] - test - info - home()
+2025-06-10 16:18:47 INFO  [MemberController] - signup()
+2025-06-10 16:18:48 INFO  [MemberController] - signin()
+2025-06-10 16:20:02 INFO  [CalendarApplication] - Starting CalendarApplication using Java 17.0.0.1 with PID 10084 (C:\app\spring_boot\pjt_intellij\calendar\build\classes\java\main started by yuch0 in C:\app\spring_boot\pjt_intellij\calendar)
+2025-06-10 16:20:02 INFO  [CalendarApplication] - No active profile set, falling back to 1 default profile: "default"
+2025-06-10 16:20:04 INFO  [WebConfig] - addInterceptors
+2025-06-10 16:20:04 INFO  [CalendarApplication] - Started CalendarApplication in 2.436 seconds (process running for 2.996)
+2025-06-10 16:20:07 INFO  [MemberController] - signin()
+2025-06-10 16:20:10 INFO  [MemberController] - signin_confirm()
+2025-06-10 16:20:10 INFO  [MemberService] - signInConfirm()
+2025-06-10 16:20:10 INFO  [MemberService] - MEMBER LOGIN SUCCESS!!
+2025-06-10 16:20:19 INFO  [MemberSigninInterceptor] - preHandle()
+2025-06-10 16:20:19 INFO  [MemberController] - modify()
+2025-06-10 16:20:19 INFO  [MemberService] - modify()
+2025-06-10 16:20:21 INFO  [HomeController] - test - info - home()
