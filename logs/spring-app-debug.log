@@ -15,3 +15,21 @@
 2025-06-10 16:20:19 DEBUG [selectMemberByID] - ==>  Preparing: SELECT * FROM USER_MEMBER WHERE ID = ?
 2025-06-10 16:20:19 DEBUG [selectMemberByID] - ==> Parameters: admin(String)
 2025-06-10 16:20:19 DEBUG [selectMemberByID] - <==      Total: 1
+2025-06-10 16:32:36 DEBUG [CalendarApplication] - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-10 16:32:46 DEBUG [selectMemberByID] - ==>  Preparing: SELECT * FROM USER_MEMBER WHERE ID = ?
+2025-06-10 16:32:46 DEBUG [selectMemberByID] - ==> Parameters: admin(String)
+2025-06-10 16:32:46 DEBUG [selectMemberByID] - <==      Total: 1
+2025-06-10 16:35:27 DEBUG [CalendarApplication] - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-10 16:35:37 DEBUG [selectMemberByID] - ==>  Preparing: SELECT * FROM USER_MEMBER WHERE ID = ?
+2025-06-10 16:35:37 DEBUG [selectMemberByID] - ==> Parameters: admin(String)
+2025-06-10 16:35:37 DEBUG [selectMemberByID] - <==      Total: 1
+2025-06-10 16:46:21 DEBUG [CalendarApplication] - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-10 16:46:38 DEBUG [MemberMapper] - Cache Hit Ratio [com.office.calendar.member.mapper.MemberMapper]: 0.0
+2025-06-10 16:46:38 DEBUG [selectMemberByID] - ==>  Preparing: SELECT * FROM USER_MEMBER WHERE ID = ?
+2025-06-10 16:46:38 DEBUG [selectMemberByID] - ==> Parameters: admin(String)
+2025-06-10 16:46:38 DEBUG [selectMemberByID] - <==      Total: 1
+2025-06-10 16:51:47 DEBUG [CalendarApplication] - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-10 16:51:55 DEBUG [MemberMapper] - Cache Hit Ratio [com.office.calendar.member.mapper.MemberMapper]: 0.0
+2025-06-10 16:51:55 DEBUG [selectMemberByID] - ==>  Preparing: SELECT * FROM USER_MEMBER WHERE ID = ?
+2025-06-10 16:51:55 DEBUG [selectMemberByID] - ==> Parameters: admin(String)
+2025-06-10 16:51:55 DEBUG [selectMemberByID] - <==      Total: 1

@@ -3,6 +3,8 @@
 
 <mapper namespace="com.office.calendar.member.mapper.MemberMapper">
 
+    <cache />
+
     <select id="isMember"
             resultType="Boolean"
             parameterType="String">
@@ -15,7 +17,7 @@
     </select>
 
     <insert id="insertMember"
-            parameterType="com.office.calendar.member.MemberDto">
+            parameterType="memberDto">
         INSERT INTO
             USER_MEMBER(ID, PW, MAIL, PHONE)
         VALUES
@@ -23,7 +25,7 @@
     </insert>
 
     <select id="selectMemberByID"
-            resultType="com.office.calendar.member.MemberDto"
+            resultType="memberDto"
             parameterType="String">
         SELECT
             *
@@ -34,7 +36,7 @@
     </select>
 
     <update id="updateMember"
-            parameterType="com.office.calendar.member.MemberDto">
+            parameterType="memberDto">
         UPDATE
             USER_MEMBER
         SET
@@ -44,8 +46,8 @@
     </update>
 
     <select id="selectMemberByIDAndMail"
-            resultType="com.office.calendar.member.MemberDto"
-            parameterType="com.office.calendar.member.MemberDto">
+            resultType="memberDto"
+            parameterType="memberDto">
         SELECT
             *
         FROM

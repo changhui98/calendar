@@ -4,8 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
-public class MemberDto {
+public class MemberDto implements Serializable {    // Serializable 인터페이스 구현
+
+    // 직렬화 버전 ID
+    private static final long serialVersionUID = 1L;
 
     private int no;                 //사용자 고유 번호
     private String id;              //사용자 ID
