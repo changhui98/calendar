@@ -5,6 +5,16 @@
 
     <cache />
 
+    <!-- 공통 SQL 로 정의 시작 -->
+    <sql id="whereMemberById">
+        WHERE ID = #{id}
+    </sql>
+
+    <sql id="baseSelectFields">
+        SELECT * FROM USER_MEMBER
+    </sql>
+    <!-- 공통 SQL 로 정의 종료 -->
+
     <select id="isMember"
             resultType="Boolean"
             parameterType="String">
@@ -12,8 +22,8 @@
             COUNT(*)
         FROM
             USER_MEMBER
-        WHERE
-            ID = #{id}
+        <include refid="whereMemberById" />
+
     </select>
 
     <insert id="insertMember"
@@ -27,12 +37,9 @@
     <select id="selectMemberByID"
             resultType="memberDto"
             parameterType="String">
-        SELECT
-            *
-        FROM
-            USER_MEMBER
-        WHERE
-            ID = #{id}
+        <include refid="baseSelectFields" />
+        <include refid="whereMemberById" />
+
     </select>
 
     <update id="updateMember"

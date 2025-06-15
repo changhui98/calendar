@@ -10,10 +10,8 @@
         <typeAlias type="com.office.calendar.member.MemberDto" alias="memberDto" />
     </typeAliases>
 
-<!--
     <mappers>
         <mapper resource="mybatis/mappers/member-mapper.xml"/>
     </mappers>
--->
 
 </configuration>
