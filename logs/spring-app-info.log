@@ -133,3 +133,17 @@
 2025-06-15 19:11:33 INFO  [CalendarApplication] - No active profile set, falling back to 1 default profile: "default"
 2025-06-15 19:11:34 INFO  [WebConfig] - addInterceptors
 2025-06-15 19:11:35 INFO  [CalendarApplication] - Started CalendarApplication in 2.529 seconds (process running for 3.101)
+2025-06-15 19:19:19 INFO  [CalendarApplication] - Starting CalendarApplication using Java 17.0.0.1 with PID 26660 (C:\app\spring_boot\pjt_intellij\calendar\build\classes\java\main started by yuch0 in C:\app\spring_boot\pjt_intellij\calendar)
+2025-06-15 19:19:19 INFO  [CalendarApplication] - No active profile set, falling back to 1 default profile: "default"
+2025-06-15 19:19:21 INFO  [WebConfig] - addInterceptors
+2025-06-15 19:19:21 INFO  [CalendarApplication] - Started CalendarApplication in 2.679 seconds (process running for 3.257)
+2025-06-15 19:19:23 INFO  [HomeController] - test - info - home()
+2025-06-15 19:19:24 INFO  [MemberController] - signin()
+2025-06-15 19:19:29 INFO  [MemberController] - signin_confirm()
+2025-06-15 19:19:29 INFO  [MemberService] - signInConfirm()
+2025-06-15 19:19:29 INFO  [MemberService] - MEMBER LOGIN SUCCESS!!
+2025-06-15 19:41:08 INFO  [HomeController] - test - info - home()
+2025-06-15 19:41:10 INFO  [MemberSigninInterceptor] - preHandle()
+2025-06-15 19:41:10 INFO  [MemberController] - modify()
+2025-06-15 19:41:10 INFO  [MemberService] - modify()
+2025-06-15 19:41:12 INFO  [HomeController] - test - info - home()
