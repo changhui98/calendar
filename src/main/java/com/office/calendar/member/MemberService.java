@@ -19,13 +19,9 @@ import java.util.Optional;
 @Service
 public class MemberService {
 
-    private final MemberDao memberDao;
-
     private final PasswordEncoder passwordEncoder;
 
     private final JavaMailSender javaMailSender;
-
-    private final MemberMapper memberMapper;
 
     private final MemberRepository memberRepository;
 
@@ -36,12 +32,13 @@ public class MemberService {
     public final static int MODIFY_SUCCESS  = 1;
     public final static int MODIFY_FAIL     = 0;
 
+    public final static int NEW_PASSWORD_CREATION_SUCCESS   = 1;
+    public final static int NEW_PASSWORD_CREATION_FAIL      = 0;
 
-    public MemberService(MemberDao memberDao, PasswordEncoder passwordEncoder, JavaMailSender javaMailSender, MemberMapper memberMapper, MemberRepository memberRepository) {
-        this.memberDao = memberDao;
+
+    public MemberService(PasswordEncoder passwordEncoder, JavaMailSender javaMailSender, MemberRepository memberRepository) {
         this.passwordEncoder = passwordEncoder;
         this.javaMailSender = javaMailSender;
-        this.memberMapper = memberMapper;
         this.memberRepository = memberRepository;
 
     }
@@ -102,7 +99,6 @@ public class MemberService {
                     .mod_date(memberEntity.getMemMod_date().toString())
                     .build();
         }
-
         return null;
     }
 
@@ -129,25 +125,20 @@ public class MemberService {
     public int findpasswordConfirm(MemberDto memberDto) {
         log.info("findpasswordConfirm()");
 
-        //1. 인증 by ID, MAIL
-        MemberDto selectedMemberDto = memberMapper.selectMemberByIDAndMail(memberDto);
-        int result = 0;
-
-        if (selectedMemberDto != null) {
-            //2. 새 비밀번호 생성
+        Optional<MemberEntity> optionalMember = memberRepository.findByMemIdAndMemMail(memberDto.getId(), memberDto.getMail());
+        if (optionalMember.isPresent()) {
             String newPassword = createNewPassword();
+            MemberEntity memberEntity = optionalMember.get();
+            memberEntity.setMemPw(passwordEncoder.encode(newPassword));
 
-            //3. DB 업데이트
-            result = memberMapper.updatePassword(memberDto.getId(), passwordEncoder.encode(newPassword));
-            if (result > 0) {
-
-                //4. 새 비밀번호 메일 발송
+            MemberEntity updateMember = memberRepository.save(memberEntity);
+            if (updateMember != null)
                 sendNewPasswordByMail(memberDto.getMail(), newPassword);
 
-            }
-
+            return NEW_PASSWORD_CREATION_SUCCESS;
         }
-        return result;
+
+        return NEW_PASSWORD_CREATION_FAIL;
     }
 
     private void sendNewPasswordByMail(String toMailAddr, String newPassword) {

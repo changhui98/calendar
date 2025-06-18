@@ -44,3 +44,11 @@
 2025-06-15 19:19:29 DEBUG [selectMemberByID] - ==> Parameters: admin(String)
 2025-06-15 19:19:29 DEBUG [selectMemberByID] - <==      Total: 1
 2025-06-15 19:41:10 DEBUG [MemberMapper] - Cache Hit Ratio [com.office.calendar.member.mapper.MemberMapper]: 0.5
+2025-06-18 20:19:37 DEBUG [CalendarApplication] - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-18 20:24:03 DEBUG [CalendarApplication] - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-18 20:26:00 DEBUG [CalendarApplication] - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-18 20:31:38 DEBUG [CalendarApplication] - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-18 20:31:54 DEBUG [CalendarApplication] - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-18 20:32:21 DEBUG [CalendarApplication] - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-18 20:36:28 DEBUG [CalendarApplication] - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-18 20:47:19 DEBUG [CalendarApplication] - Running with Spring Boot v3.5.0, Spring v6.2.7
