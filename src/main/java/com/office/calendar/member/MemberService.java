@@ -85,7 +85,22 @@ public class MemberService {
     public MemberDto modify(String loginedID) {
         log.info("modify()");
 
-        return memberMapper.selectMemberByID(loginedID);
+        Optional<MemberEntity> optionalMember = memberRepository.findByMemId(loginedID);
+        if (optionalMember.isPresent()) {
+            MemberEntity memberEntity = optionalMember.get();
+            MemberDto memberDto = MemberDto.builder()
+                    .no(memberEntity.getMemNo())
+                    .id(memberEntity.getMemId())
+                    .mail(memberEntity.getMemMail())
+                    .phone(memberEntity.getMemPhone())
+                    .authority_no(memberEntity.getMemAuthority_no())
+                    .reg_date(memberEntity.getMemReg_date().toString())
+                    .mod_date(memberEntity.getMemMod_date().toString())
+                    .build();
+            return memberDto;
+        }
+
+        return null;
     }
 
     public int modifyConfirm(MemberDto memberDto) {
