@@ -1,5 +1,7 @@
 package com.office.calendar.member;
 
+import com.office.calendar.member.jpa.MemberEntity;
+import com.office.calendar.member.jpa.MemberRepository;
 import com.office.calendar.member.mapper.MemberMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
 import java.util.Date;
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -23,32 +26,44 @@ public class MemberService {
 
     private final MemberMapper memberMapper;
 
+    private final MemberRepository memberRepository;
+
     public final static int USER_ID_ALREADY_EXIST   = 0;
     public final static int USER_SIGNUP_SUCCESS     = 1;
     public final static int USER_SIGNUP_FAIL        = -1;
 
 
-    public MemberService(MemberDao memberDao, PasswordEncoder passwordEncoder, JavaMailSender javaMailSender, MemberMapper memberMapper) {
+    public MemberService(MemberDao memberDao, PasswordEncoder passwordEncoder, JavaMailSender javaMailSender, MemberMapper memberMapper, MemberRepository memberRepository) {
         this.memberDao = memberDao;
         this.passwordEncoder = passwordEncoder;
         this.javaMailSender = javaMailSender;
         this.memberMapper = memberMapper;
+        this.memberRepository = memberRepository;
+
     }
 
     public int signupConfirm(MemberDto memberDto) {
         log.info("signupConfirm()");
 
-        boolean isMember = memberMapper.isMember(memberDto.getId());
+        boolean isMember = memberRepository.existsByMemId(memberDto.getId());
 
         if (!isMember) {
             memberDto.setPw(passwordEncoder.encode(memberDto.getPw()));
 
-            int result = memberMapper.insertMember(memberDto);
-            if (result > 0) {
+            MemberEntity memberEntity = MemberEntity.builder()
+                    .memId(memberDto.getId())
+                    .memPw(memberDto.getPw())
+                    .memMail(memberDto.getMail())
+                    .memPhone(memberDto.getPhone())
+                    .build();
+
+            MemberEntity savedMemberEntity = memberRepository.save(memberEntity);
+            if (savedMemberEntity != null) {
                 return USER_SIGNUP_SUCCESS;
             } else {
                 return USER_SIGNUP_FAIL;
             }
+
         } else {
             return USER_ID_ALREADY_EXIST;
         }
@@ -57,15 +72,14 @@ public class MemberService {
     public String signInConfirm(MemberDto memberDto) {
         log.info("signInConfirm()");
 
-        MemberDto dto = memberMapper.selectMemberByID(memberDto.getId()); //MemberDto or null
-        if (dto != null && passwordEncoder.matches(memberDto.getPw(), dto.getPw())) {
+        Optional<MemberEntity> optionalMember = memberRepository.findByMemId(memberDto.getId());
+        if (optionalMember.isPresent() && passwordEncoder.matches(memberDto.getPw(), optionalMember.get().getMemPw())){
             log.info("MEMBER LOGIN SUCCESS!!");
-            return dto.getId();
+            return optionalMember.get().getMemId();
         } else {
             log.info("MEMBER LOGIN FAIL!!");
             return null;
         }
-
     }
 
     public MemberDto modify(String loginedID) {

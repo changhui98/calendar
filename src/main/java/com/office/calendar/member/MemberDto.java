@@ -1,12 +1,16 @@
 package com.office.calendar.member;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class MemberDto implements Serializable {    // Serializable 인터페이스 구현
 
     // 직렬화 버전 ID
