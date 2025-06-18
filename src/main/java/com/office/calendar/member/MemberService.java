@@ -11,6 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Optional;
 
@@ -31,6 +32,9 @@ public class MemberService {
     public final static int USER_ID_ALREADY_EXIST   = 0;
     public final static int USER_SIGNUP_SUCCESS     = 1;
     public final static int USER_SIGNUP_FAIL        = -1;
+
+    public final static int MODIFY_SUCCESS  = 1;
+    public final static int MODIFY_FAIL     = 0;
 
 
     public MemberService(MemberDao memberDao, PasswordEncoder passwordEncoder, JavaMailSender javaMailSender, MemberMapper memberMapper, MemberRepository memberRepository) {
@@ -88,7 +92,7 @@ public class MemberService {
         Optional<MemberEntity> optionalMember = memberRepository.findByMemId(loginedID);
         if (optionalMember.isPresent()) {
             MemberEntity memberEntity = optionalMember.get();
-            MemberDto memberDto = MemberDto.builder()
+            return MemberDto.builder()
                     .no(memberEntity.getMemNo())
                     .id(memberEntity.getMemId())
                     .mail(memberEntity.getMemMail())
@@ -97,7 +101,6 @@ public class MemberService {
                     .reg_date(memberEntity.getMemReg_date().toString())
                     .mod_date(memberEntity.getMemMod_date().toString())
                     .build();
-            return memberDto;
         }
 
         return null;
@@ -108,7 +111,19 @@ public class MemberService {
 
         memberDto.setPw(passwordEncoder.encode(memberDto.getPw()));
 
-        return memberMapper.updateMember(memberDto);
+        Optional<MemberEntity> optionalMember = memberRepository.findById(memberDto.getNo());
+        if (optionalMember.isPresent()) {
+            MemberEntity findedMemberEntity = optionalMember.get();
+            findedMemberEntity.setMemPw(memberDto.getPw());
+            findedMemberEntity.setMemMail(memberDto.getMail());
+            findedMemberEntity.setMemPhone(memberDto.getPhone());
+            findedMemberEntity.setMemMod_date(LocalDateTime.now());
+
+            memberRepository.save(findedMemberEntity);
+
+            return MODIFY_SUCCESS;
+        }
+        return MODIFY_FAIL;
     }
 
     public int findpasswordConfirm(MemberDto memberDto) {
