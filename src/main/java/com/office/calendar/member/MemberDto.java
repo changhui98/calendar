@@ -1,11 +1,14 @@
 package com.office.calendar.member;
 
+import com.office.calendar.member.jpa.MemberEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Data
 @Builder
@@ -25,4 +28,19 @@ public class MemberDto implements Serializable {    // Serializable 인터페이
     private String reg_date;        //사용자 정보 등록일
     private String mod_date;        //사용자 정보 수정일
 
+
+    public MemberEntity toEntity() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+        return MemberEntity.builder()
+                .memNo(no)
+                .memId(id)
+                .memPw(pw)
+                .memMail(mail)
+                .memPhone(phone)
+                .memAuthority_no(authority_no)
+                .memReg_date(reg_date != null ? LocalDateTime.parse(reg_date, formatter) : null)
+                .memMod_date(mod_date != null ? LocalDateTime.parse(mod_date, formatter) : null)
+                .build();
+    }
 }
