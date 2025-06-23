@@ -1,5 +1,6 @@
 package com.office.calendar.member.jpa;
 
+import com.office.calendar.member.MemberDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Entity
 @Table(name = "USER_MEMBER")
@@ -52,6 +54,22 @@ public class MemberEntity {
     @PreUpdate
     protected void onUpdate() {
         this.memMod_date = LocalDateTime.now();
+    }
+
+    public MemberDto toDto() {
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+        return MemberDto.builder()
+                .no(memNo)
+                .id(memId)
+                .pw(memPw)
+                .mail(memMail)
+                .phone(memPhone)
+                .authority_no(memAuthority_no)
+                .reg_date(memReg_date != null ? memReg_date.format(formatter) : null)
+                .mod_date(memMod_date != null ? memMod_date.format(formatter) : null)
+                .build();
     }
 
 }
