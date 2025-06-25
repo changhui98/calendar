@@ -20,6 +20,6 @@ public class AuthorityEntity {
     private byte authNo;                        // 권한 고유 번호
 
     @Column(name = "ROLE_NAME", nullable = false, length = 20)
-    private String authRollName;                // 권한 이름
+    private String authRoleName;                // 권한 이름
 
 }
