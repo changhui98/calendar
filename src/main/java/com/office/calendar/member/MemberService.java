@@ -9,6 +9,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.security.SecureRandom;
 import java.time.LocalDateTime;
@@ -43,6 +44,7 @@ public class MemberService {
 
     }
 
+    @Transactional
     public int signupConfirm(MemberDto memberDto) {
         log.info("signupConfirm()");
 
@@ -51,14 +53,7 @@ public class MemberService {
         if (!isMember) {
             memberDto.setPw(passwordEncoder.encode(memberDto.getPw()));
 
-            MemberEntity memberEntity = MemberEntity.builder()
-                    .memId(memberDto.getId())
-                    .memPw(memberDto.getPw())
-                    .memMail(memberDto.getMail())
-                    .memPhone(memberDto.getPhone())
-                    .build();
-
-            MemberEntity savedMemberEntity = memberRepository.save(memberEntity);
+            MemberEntity savedMemberEntity = memberRepository.save(memberDto.toEntity());
             if (savedMemberEntity != null) {
                 return USER_SIGNUP_SUCCESS;
             } else {
@@ -89,19 +84,12 @@ public class MemberService {
         Optional<MemberEntity> optionalMember = memberRepository.findByMemId(loginedID);
         if (optionalMember.isPresent()) {
             MemberEntity memberEntity = optionalMember.get();
-            return MemberDto.builder()
-                    .no(memberEntity.getMemNo())
-                    .id(memberEntity.getMemId())
-                    .mail(memberEntity.getMemMail())
-                    .phone(memberEntity.getMemPhone())
-                    .authority_no(memberEntity.getMemAuthority_no())
-                    .reg_date(memberEntity.getMemReg_date().toString())
-                    .mod_date(memberEntity.getMemMod_date().toString())
-                    .build();
+            return memberEntity.toDto();
         }
         return null;
     }
 
+    @Transactional
     public int modifyConfirm(MemberDto memberDto) {
         log.info("modifyConfirm()");
 
@@ -115,13 +103,14 @@ public class MemberService {
             findedMemberEntity.setMemPhone(memberDto.getPhone());
             findedMemberEntity.setMemMod_date(LocalDateTime.now());
 
-            memberRepository.save(findedMemberEntity);
+            // memberRepository.save(findedMemberEntity); Transactional 적용되어 있으면 save()호출하지 않아도 자동 반영
 
             return MODIFY_SUCCESS;
         }
         return MODIFY_FAIL;
     }
 
+    @Transactional
     public int findpasswordConfirm(MemberDto memberDto) {
         log.info("findpasswordConfirm()");
 
