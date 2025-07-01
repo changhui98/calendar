@@ -59,6 +59,16 @@ public class SecurityConfig {
                         })
                 );
 
+        http.logout(logout -> logout
+                .logoutUrl("/member/signout_confirm")
+                .logoutSuccessHandler((request, response, authentication) -> {
+                    log.info("signout logout success Handler()");
+
+                    String targetURI = "/";
+                    response.sendRedirect(targetURI);
+                })
+        );
+
         return http.build();
     }
 
