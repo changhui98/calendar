@@ -1502,3 +1502,5 @@ This generated password is for development use only. Your security configuration
 2025-06-25 09:47:56 INFO  [[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2025-06-25 09:47:56 INFO  [DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
 2025-06-25 09:47:56 INFO  [DispatcherServlet] - Completed initialization in 1 ms
+2025-06-25 12:18:33 WARN  [PoolBase] - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@dfe713a (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-25 12:18:35 WARN  [PoolBase] - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3e8a8da0 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.

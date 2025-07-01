@@ -23,6 +23,18 @@ public class SecurityConfig {
         http.cors(cors -> cors.disable())
                 .csrf(csrf -> csrf.disable());
 
+        http.authorizeHttpRequests(auth -> auth.requestMatchers(
+            "/",
+                "/css/*",
+                "/img/*",
+                "/js/*",
+                "/member/signup",
+                "/member/signup_confirm",
+                "/member/signin",
+                "/member/findpassword",
+                "/member/findpassword_confirm"
+        ).permitAll().anyRequest().authenticated());
+
         http.formLogin(login -> login.disable());
 
         return http.build();
