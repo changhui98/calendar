@@ -34,6 +34,7 @@ public class SecurityConfig {
                 "/member/signup",
                 "/member/signup_confirm",
                 "/member/signin",
+                "/member/signin_result",
                 "/member/findpassword",
                 "/member/findpassword_confirm"
         ).permitAll().anyRequest().authenticated());
