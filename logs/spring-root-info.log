@@ -1746,3 +1746,183 @@ java.lang.ClassCastException: class org.springframework.security.core.userdetail
 2025-07-15 14:23:15 INFO  [[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2025-07-15 14:23:15 INFO  [DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
 2025-07-15 14:23:15 INFO  [DispatcherServlet] - Completed initialization in 1 ms
+2025-07-15 14:45:08 INFO  [DevToolsPropertyDefaultsPostProcessor] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-15 14:45:08 INFO  [DevToolsPropertyDefaultsPostProcessor] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-15 14:45:09 INFO  [RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-15 14:45:09 INFO  [RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 36 ms. Found 2 JPA repository interfaces.
+2025-07-15 14:45:10 INFO  [TomcatWebServer] - Tomcat initialized with port 8090 (http)
+2025-07-15 14:45:10 INFO  [Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-8090"]
+2025-07-15 14:45:10 INFO  [StandardService] - Starting service [Tomcat]
+2025-07-15 14:45:10 INFO  [StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-15 14:45:10 INFO  [[/]] - Initializing Spring embedded WebApplicationContext
+2025-07-15 14:45:10 INFO  [ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 1382 ms
+2025-07-15 14:45:10 INFO  [LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-15 14:45:10 INFO  [Version] - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-07-15 14:45:10 INFO  [RegionFactoryInitiator] - HHH000026: Second-level cache disabled
+2025-07-15 14:45:10 INFO  [SpringPersistenceUnitInfo] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-15 14:45:10 INFO  [HikariDataSource] - HikariPool-1 - Starting...
+2025-07-15 14:45:11 INFO  [HikariPool] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7185cd8e
+2025-07-15 14:45:11 INFO  [HikariDataSource] - HikariPool-1 - Start completed.
+2025-07-15 14:45:11 WARN  [deprecation] - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-15 14:45:11 INFO  [pooling] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.42
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-15 14:45:11 INFO  [JtaPlatformInitiator] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-15 14:45:11 INFO  [LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-15 14:45:12 WARN  [JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-15 14:45:12 INFO  [InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer] - Global AuthenticationManager configured with UserDetailsService bean with name memberDetailsService
+2025-07-15 14:45:12 INFO  [OptionalLiveReloadServer] - LiveReload server is running on port 35729
+2025-07-15 14:45:12 INFO  [Http11NioProtocol] - Starting ProtocolHandler ["http-nio-8090"]
+2025-07-15 14:45:12 INFO  [TomcatWebServer] - Tomcat started on port 8090 (http) with context path '/'
+2025-07-15 14:45:16 INFO  [[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-15 14:45:16 INFO  [DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
+2025-07-15 14:45:16 INFO  [DispatcherServlet] - Completed initialization in 0 ms
+2025-07-15 14:50:39 INFO  [DevToolsPropertyDefaultsPostProcessor] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-15 14:50:39 INFO  [DevToolsPropertyDefaultsPostProcessor] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-15 14:50:40 INFO  [RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-15 14:50:40 INFO  [RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 41 ms. Found 2 JPA repository interfaces.
+2025-07-15 14:50:40 INFO  [TomcatWebServer] - Tomcat initialized with port 8090 (http)
+2025-07-15 14:50:40 INFO  [Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-8090"]
+2025-07-15 14:50:40 INFO  [StandardService] - Starting service [Tomcat]
+2025-07-15 14:50:40 INFO  [StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-15 14:50:40 INFO  [[/]] - Initializing Spring embedded WebApplicationContext
+2025-07-15 14:50:40 INFO  [ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 1338 ms
+2025-07-15 14:50:41 INFO  [LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-15 14:50:41 INFO  [Version] - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-07-15 14:50:41 INFO  [RegionFactoryInitiator] - HHH000026: Second-level cache disabled
+2025-07-15 14:50:41 INFO  [SpringPersistenceUnitInfo] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-15 14:50:41 INFO  [HikariDataSource] - HikariPool-1 - Starting...
+2025-07-15 14:50:41 INFO  [HikariPool] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7c372005
+2025-07-15 14:50:41 INFO  [HikariDataSource] - HikariPool-1 - Start completed.
+2025-07-15 14:50:41 WARN  [deprecation] - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-15 14:50:41 INFO  [pooling] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.42
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-15 14:50:42 INFO  [JtaPlatformInitiator] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-15 14:50:42 INFO  [LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-15 14:50:42 WARN  [JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-15 14:50:42 INFO  [InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer] - Global AuthenticationManager configured with UserDetailsService bean with name memberDetailsService
+2025-07-15 14:50:43 INFO  [OptionalLiveReloadServer] - LiveReload server is running on port 35729
+2025-07-15 14:50:43 INFO  [Http11NioProtocol] - Starting ProtocolHandler ["http-nio-8090"]
+2025-07-15 14:50:43 INFO  [TomcatWebServer] - Tomcat started on port 8090 (http) with context path '/'
+2025-07-15 14:50:44 INFO  [[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-15 14:50:44 INFO  [DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
+2025-07-15 14:50:44 INFO  [DispatcherServlet] - Completed initialization in 0 ms
+2025-07-15 16:30:27 INFO  [DevToolsPropertyDefaultsPostProcessor] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-15 16:30:27 INFO  [DevToolsPropertyDefaultsPostProcessor] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-15 16:30:27 INFO  [RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-15 16:30:27 INFO  [RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 38 ms. Found 2 JPA repository interfaces.
+2025-07-15 16:30:28 INFO  [TomcatWebServer] - Tomcat initialized with port 8090 (http)
+2025-07-15 16:30:28 INFO  [Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-8090"]
+2025-07-15 16:30:28 INFO  [StandardService] - Starting service [Tomcat]
+2025-07-15 16:30:28 INFO  [StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-15 16:30:28 INFO  [[/]] - Initializing Spring embedded WebApplicationContext
+2025-07-15 16:30:28 INFO  [ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 1466 ms
+2025-07-15 16:30:28 INFO  [LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-15 16:30:28 INFO  [Version] - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-07-15 16:30:28 INFO  [RegionFactoryInitiator] - HHH000026: Second-level cache disabled
+2025-07-15 16:30:29 INFO  [SpringPersistenceUnitInfo] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-15 16:30:29 INFO  [HikariDataSource] - HikariPool-1 - Starting...
+2025-07-15 16:30:29 INFO  [HikariPool] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@270f7cc6
+2025-07-15 16:30:29 INFO  [HikariDataSource] - HikariPool-1 - Start completed.
+2025-07-15 16:30:29 WARN  [deprecation] - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-15 16:30:29 INFO  [pooling] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.42
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-15 16:30:30 INFO  [JtaPlatformInitiator] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-15 16:30:30 INFO  [LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-15 16:30:30 WARN  [JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-15 16:30:30 INFO  [InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer] - Global AuthenticationManager configured with UserDetailsService bean with name memberDetailsService
+2025-07-15 16:30:31 INFO  [OptionalLiveReloadServer] - LiveReload server is running on port 35729
+2025-07-15 16:30:31 INFO  [Http11NioProtocol] - Starting ProtocolHandler ["http-nio-8090"]
+2025-07-15 16:30:31 INFO  [TomcatWebServer] - Tomcat started on port 8090 (http) with context path '/'
+2025-07-15 16:30:39 INFO  [[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-15 16:30:39 INFO  [DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
+2025-07-15 16:30:39 INFO  [DispatcherServlet] - Completed initialization in 0 ms
+2025-07-15 16:32:23 INFO  [DevToolsPropertyDefaultsPostProcessor] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-15 16:32:23 INFO  [DevToolsPropertyDefaultsPostProcessor] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-15 16:32:23 INFO  [RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-15 16:32:23 INFO  [RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 37 ms. Found 2 JPA repository interfaces.
+2025-07-15 16:32:24 INFO  [TomcatWebServer] - Tomcat initialized with port 8090 (http)
+2025-07-15 16:32:24 INFO  [Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-8090"]
+2025-07-15 16:32:24 INFO  [StandardService] - Starting service [Tomcat]
+2025-07-15 16:32:24 INFO  [StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-15 16:32:24 INFO  [[/]] - Initializing Spring embedded WebApplicationContext
+2025-07-15 16:32:24 INFO  [ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 1420 ms
+2025-07-15 16:32:24 INFO  [LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-15 16:32:24 INFO  [Version] - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-07-15 16:32:24 INFO  [RegionFactoryInitiator] - HHH000026: Second-level cache disabled
+2025-07-15 16:32:25 INFO  [SpringPersistenceUnitInfo] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-15 16:32:25 INFO  [HikariDataSource] - HikariPool-1 - Starting...
+2025-07-15 16:32:25 INFO  [HikariPool] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@65f9121d
+2025-07-15 16:32:25 INFO  [HikariDataSource] - HikariPool-1 - Start completed.
+2025-07-15 16:32:25 WARN  [deprecation] - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-15 16:32:25 INFO  [pooling] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.42
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-15 16:32:26 INFO  [JtaPlatformInitiator] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-15 16:32:26 INFO  [LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-15 16:32:26 WARN  [JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-15 16:32:26 INFO  [InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer] - Global AuthenticationManager configured with UserDetailsService bean with name memberDetailsService
+2025-07-15 16:32:26 INFO  [OptionalLiveReloadServer] - LiveReload server is running on port 35729
+2025-07-15 16:32:27 INFO  [Http11NioProtocol] - Starting ProtocolHandler ["http-nio-8090"]
+2025-07-15 16:32:27 INFO  [TomcatWebServer] - Tomcat started on port 8090 (http) with context path '/'
+2025-07-15 16:32:30 INFO  [[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-15 16:32:30 INFO  [DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
+2025-07-15 16:32:30 INFO  [DispatcherServlet] - Completed initialization in 0 ms
+2025-07-15 16:35:52 INFO  [DevToolsPropertyDefaultsPostProcessor] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-15 16:35:52 INFO  [DevToolsPropertyDefaultsPostProcessor] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-15 16:35:53 INFO  [RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-15 16:35:53 INFO  [RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 37 ms. Found 2 JPA repository interfaces.
+2025-07-15 16:35:53 INFO  [TomcatWebServer] - Tomcat initialized with port 8090 (http)
+2025-07-15 16:35:53 INFO  [Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-8090"]
+2025-07-15 16:35:53 INFO  [StandardService] - Starting service [Tomcat]
+2025-07-15 16:35:53 INFO  [StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-15 16:35:53 INFO  [[/]] - Initializing Spring embedded WebApplicationContext
+2025-07-15 16:35:53 INFO  [ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 1401 ms
+2025-07-15 16:35:53 INFO  [LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-15 16:35:54 INFO  [Version] - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-07-15 16:35:54 INFO  [RegionFactoryInitiator] - HHH000026: Second-level cache disabled
+2025-07-15 16:35:54 INFO  [SpringPersistenceUnitInfo] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-15 16:35:54 INFO  [HikariDataSource] - HikariPool-1 - Starting...
+2025-07-15 16:35:54 INFO  [HikariPool] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@38c8fad3
+2025-07-15 16:35:54 INFO  [HikariDataSource] - HikariPool-1 - Start completed.
+2025-07-15 16:35:54 WARN  [deprecation] - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-15 16:35:54 INFO  [pooling] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.42
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-15 16:35:55 INFO  [JtaPlatformInitiator] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-15 16:35:55 INFO  [LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-15 16:35:55 WARN  [JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-15 16:35:55 INFO  [InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer] - Global AuthenticationManager configured with UserDetailsService bean with name memberDetailsService
+2025-07-15 16:35:56 INFO  [OptionalLiveReloadServer] - LiveReload server is running on port 35729
+2025-07-15 16:35:56 INFO  [Http11NioProtocol] - Starting ProtocolHandler ["http-nio-8090"]
+2025-07-15 16:35:56 INFO  [TomcatWebServer] - Tomcat started on port 8090 (http) with context path '/'
+2025-07-15 16:35:59 INFO  [[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-15 16:35:59 INFO  [DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
+2025-07-15 16:35:59 INFO  [DispatcherServlet] - Completed initialization in 0 ms

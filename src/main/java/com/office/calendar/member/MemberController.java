@@ -8,6 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.security.Principal;
 
 
 @Slf4j
@@ -62,7 +65,7 @@ public class MemberController {
 
     /*
     로그인 확인
-     */
+
     @PostMapping("/signin_confirm")
     public String signInConfirm(MemberDto memberDto, Model model, HttpSession session) {
         log.info("signin_confirm()");
@@ -79,10 +82,11 @@ public class MemberController {
 
         return nextPage;
     }
+     */
 
     /*
     로그아웃 확인
-     */
+
     @GetMapping("/signout_confirm")
     public String signOutConfirm(HttpSession session) {
         log.info("signout_confirm()");
@@ -91,19 +95,20 @@ public class MemberController {
         session.invalidate();
         return nextPage;
     }
+     */
 
     /*
     계정 정보 수정 양식
      */
     @GetMapping("/modify")
-    public String modify(HttpSession session, Model model) {
+    public String modify(HttpSession session, Model model, Principal principal) {
         log.info("modify()");
 
         String nextPage = "member/modify_form";
 
 
-        String loginedID = String.valueOf(session.getAttribute("loginedID"));
-        MemberDto loginedMemberDto = memberService.modify(loginedID);
+        //String loginedID = String.valueOf(session.getAttribute("loginedID"));
+        MemberDto loginedMemberDto = memberService.modify(principal.getName());
         model.addAttribute("loginedMemberDto", loginedMemberDto);
 
         return nextPage;
@@ -146,6 +151,17 @@ public class MemberController {
 
         int result = memberService.findpasswordConfirm(memberDto);
         model.addAttribute("result", result);
+
+        return nextPage;
+    }
+
+    // 로그인 결과
+    @GetMapping("/signin_result")
+    public String signinResult(@RequestParam(value = "loginedID", required = false) String loginedID, Model model) {
+        log.info("signinResult()");
+
+        String nextPage = "member/signin_result";
+        model.addAttribute("loginedID", loginedID);
 
         return nextPage;
     }
