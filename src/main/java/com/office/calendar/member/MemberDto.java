@@ -1,5 +1,7 @@
 package com.office.calendar.member;
 
+import com.office.calendar.member.jpa.AuthorityDto;
+import com.office.calendar.member.jpa.AuthorityEntity;
 import com.office.calendar.member.jpa.MemberEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,7 +26,8 @@ public class MemberDto implements Serializable {    // Serializable 인터페이
     private String pw;              //사용자 PW
     private String mail;            //사용자 이메일
     private String phone;           //사용자 연락처
-    private int authority_no;       //사용자 권한 번호
+    //private int authority_no;       //사용자 권한 번호
+    private AuthorityDto authorityDto; //사용자 권한 객체
     private String reg_date;        //사용자 정보 등록일
     private String mod_date;        //사용자 정보 수정일
 
@@ -38,7 +41,8 @@ public class MemberDto implements Serializable {    // Serializable 인터페이
                 .memPw(pw)
                 .memMail(mail)
                 .memPhone(phone)
-                .memAuthority_no(authority_no)
+                //.memAuthority_no(authority_no)
+                .authorityEntity(authorityDto != null ? authorityDto.toEntity() : null)
                 .memReg_date(reg_date != null ? LocalDateTime.parse(reg_date, formatter) : null)
                 .memMod_date(mod_date != null ? LocalDateTime.parse(mod_date, formatter) : null)
                 .build();

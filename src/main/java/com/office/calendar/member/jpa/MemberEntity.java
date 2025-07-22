@@ -35,8 +35,12 @@ public class MemberEntity {
     @Column(name = "PHONE", nullable = false, length = 20)
     private String memPhone;
 
-    @Column(name = "AUTHORITY_NO")
-    private int memAuthority_no;
+    //@Column(name = "AUTHORITY_NO")
+    //private int memAuthority_no;
+
+    @ManyToOne
+    @JoinColumn(name = "AUTHORITY_NO")
+    private AuthorityEntity authorityEntity; //사용자 권한 Entity
 
     @Column(name = "REG_DATE", updatable = false)
     private LocalDateTime memReg_date;
@@ -46,7 +50,8 @@ public class MemberEntity {
 
     @PrePersist
     protected void onCreate() {
-        this.memAuthority_no =1;
+        // this.memAuthority_no =1;
+        this.authorityEntity = new AuthorityEntity((byte)1, "PRE_USER");
         this.memReg_date = LocalDateTime.now();
         this.memMod_date = LocalDateTime.now();
     }
@@ -66,7 +71,8 @@ public class MemberEntity {
                 .pw(memPw)
                 .mail(memMail)
                 .phone(memPhone)
-                .authority_no(memAuthority_no)
+                //.authority_no(memAuthority_no)
+                .authorityDto(authorityEntity.toDto())
                 .reg_date(memReg_date != null ? memReg_date.format(formatter) : null)
                 .mod_date(memMod_date != null ? memMod_date.format(formatter) : null)
                 .build();

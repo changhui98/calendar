@@ -31,7 +31,7 @@ public class MemberDetailsService implements UserDetailsService {
             return User.builder()
                     .username(findedMemberEntity.getMemId())
                     .password(findedMemberEntity.getMemPw())
-                    .roles("PRE_USER")
+                    .roles(findedMemberEntity.getAuthorityEntity().getAuthRoleName())
                     .build();
         }
 

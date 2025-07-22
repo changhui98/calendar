@@ -1,6 +1,6 @@
 package com.office.calendar.config;
 
-import com.office.calendar.member.AuthorityEntity;
+import com.office.calendar.member.jpa.AuthorityEntity;
 import com.office.calendar.member.jpa.AuthorityRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
